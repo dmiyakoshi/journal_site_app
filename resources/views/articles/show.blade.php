@@ -14,12 +14,12 @@
         <a href="/articles">一覧に戻る</a>
     </div>
     <div class="button">
-        <a href="/articles/{{ $article->id }}">編集する</a>
+        <a href="/articles/{{ $article->id }}/edit">編集する</a>
     </div>
-    <form action="/articles" method="post" >
+    <input type="submit" value="削除する" form="form-del">
+    <form action="/articles/{{ $article->id }}" method="post" id="form-del">
         @csrf
         @method('DELETE')
-        <input type="submit" value="削除する" >
     </form>
 </body>
 </html>
