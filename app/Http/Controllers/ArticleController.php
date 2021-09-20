@@ -25,16 +25,16 @@ class ArticleController extends Controller
     {
         $article = new Article;
 
-        $article->name = $request->name;
+        $article->title = $request->title;
         $article->body = $request->body;
 
         $article->save();
 
-        return redirect('ariticles');
+        return redirect('articles');
     }
-
+    
     public function create()
     {
-        return view('article.create');
+        return view('articles.create');
     }
 }
