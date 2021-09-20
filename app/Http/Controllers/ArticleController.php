@@ -11,13 +11,30 @@ class ArticleController extends Controller
     {
         $articles = Article::all();
 
-        return view('article.index', ['articles' => $articles]);
+        return view('articles.index', ['articles' => $articles]);
     }
 
     public function show($id)
     {
         $article = Article::find($id);
 
-        return view('article.show', ['article' => $article]);
+        return view('articles.show', ['article' => $article]);
+    }
+
+    public function store(Request $request)
+    {
+        $article = new Article;
+
+        $article->name = $request->name;
+        $article->body = $request->body;
+
+        $article->save();
+
+        return redirect('ariticles');
+    }
+
+    public function create()
+    {
+        return view('article.create');
     }
 }

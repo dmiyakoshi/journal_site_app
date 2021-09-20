@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>論文一覧</h1>
-    @foreach ($article as $art)
-        <a href="/article{{ $art->id }}">{{ $art->title }}</a>
-    @endforeach
-
+    <h1>新規論文投稿</h1>
+    <p>論文タイトル</p>
+    <input type="text" name="name" value="{{ old('title') }}">
+    <p>本文</p>
+    <textarea name="body" >
+        {{ old('body') }}
+    </textarea>
     <div class="button">
-        <a href="article/create">新規論文投稿</a>
+        <input type="submit" value="投稿">
     </div>
 </body>
 </html>

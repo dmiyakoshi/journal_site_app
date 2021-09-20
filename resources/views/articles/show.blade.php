@@ -11,15 +11,15 @@
     <p>タイトル:{{ $article->title }}</p>
     <p>{{ $article->body }}</p>
     <div class="button">
-        <a href="/aricle/index">一覧に戻る</a>
+        <a href="/aricles/index">一覧に戻る</a>
     </div>
     <div class="button">
-        <a href="/article/create">編集する</a>
+        <a href="/articles/create">編集する</a>
     </div>
-    <form action="/article" method="post" >
+    <form action="/articles" method="post" >
+        @csrf
+        @method('DELETE')
         <input type="submit" value="削除する" >
-            @csrf;
-            @method('DELETE');
     </form>
 </body>
 </html>
