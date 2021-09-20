@@ -7,3 +7,7 @@
 .title-art a{
     padding-bottom: 10px;
 } */
+
+.button-group {
+    display: flex;
+}
