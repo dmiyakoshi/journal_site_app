@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\ArticleController@index');
 
-//Route::resource('')
+Route::resource('articles', \App\Http\Controllers\ArticleController::class);
