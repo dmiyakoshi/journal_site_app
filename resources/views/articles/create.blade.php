@@ -12,7 +12,7 @@
     <h1>新規論文投稿</h1>
     <form action="/articles" method="POST">
         @csrf
-        <p>論文タイトル 
+        <p>論文タイトル
             <br>
             <input type="text" name="title" value="{{ old('title') }}">
         </p>
